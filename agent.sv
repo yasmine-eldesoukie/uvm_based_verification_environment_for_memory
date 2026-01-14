@@ -5,6 +5,8 @@ package agent_pkg;
         my_monitor mon;
         my_sequencer seqr;
 
+        virtual intf agent_vif; 
+
         /* step 1: registeration in the factory */
         `uvm_component_utils(my_agent);
 
@@ -19,6 +21,12 @@ package agent_pkg;
             driv= my_driver::type_id::create("driv",this); //component creation, "this" points to where the comp. will be created
             mon= my_monitor::type_id::create("mon",this); 
             seqr= my_sequencer::type_id::create("seqr",this);
+
+            //-------------- Virtual Interface --------------//
+            if(!(uvm_config_db #(virtual intf)::get(this,"", "my_vif", agent_vif)))
+                `uvm_info("my_agent", "Failed to get vif in agent", UVM_LOW);
+            uvm_config_db #(virtual intf)::set(this,"driv", "my_vif", agent_vif);
+            uvm_config_db #(virtual intf)::set(this,"mon", "my_vif", agent_vif);
 
             $display("agent build phase");
         endfunction
