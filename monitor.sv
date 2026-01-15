@@ -1,9 +1,13 @@
 package monitor_pkg;
+    `include "uvm_macros.svh"
+    import uvm_pkg::*;
+
+    import seq_item_pkg::*;
 	class my_monitor extends uvm_monitor;
 
 		my_seq_item seq_item;
 
-		virtual intf monitor_vif; 
+		virtual intf mon_vif; 
 		
 		/* step 1: registeration in the factory */
         `uvm_component_utils(my_monitor);
@@ -23,7 +27,5 @@ package monitor_pkg;
                 `uvm_info("my_monitor", "Failed to get vif in monitor", UVM_LOW); 
             $display("monitor build phase");
         endfunction
-        endfunction
-
     endclass
 endpackage

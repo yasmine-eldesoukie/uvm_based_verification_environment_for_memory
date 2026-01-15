@@ -1,4 +1,8 @@
 package sequencer_pkg;
+    `include "uvm_macros.svh"
+    import uvm_pkg::*;
+
+    import seq_item_pkg::*;
 	class my_sequencer extends uvm_sequencer #(my_seq_item);
 
 		my_seq_item seq_item;

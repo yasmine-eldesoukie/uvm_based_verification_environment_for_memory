@@ -1,5 +1,9 @@
 module tb_top();
-    import mem_pkg::*;
+    `include "interface.sv"
+    `include "uvm_macros.svh"
+    import uvm_pkg::*;
+
+    import test_pkg::*;
     
     logic clk;
     intf my_intf(clk);
@@ -17,7 +21,7 @@ module tb_top();
 
     initial begin
         clk=1'b0;
-        always #5 clk=~clk;
+        //always #5 clk=~clk;
     end
 
     initial begin

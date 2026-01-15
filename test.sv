@@ -1,4 +1,9 @@
 package test_pkg;
+    `include "uvm_macros.svh"
+    import uvm_pkg::*;
+
+    import env_pkg::*;
+    import sequence_pkg::*;
 	class my_test extends uvm_test;
 
 		my_env env;

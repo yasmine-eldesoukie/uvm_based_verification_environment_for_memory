@@ -1,4 +1,10 @@
 package agent_pkg;
+    `include "uvm_macros.svh"
+    import uvm_pkg::*;
+
+    import driver_pkg::*;
+    import monitor_pkg::*;
+    import sequencer_pkg::*;
 	class my_agent extends uvm_agent;
 
 		my_driver driv;

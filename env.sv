@@ -1,4 +1,10 @@
 package env_pkg;
+    `include "uvm_macros.svh"
+    import uvm_pkg::*;
+
+    import agent_pkg::*;
+    import scoreboard_pkg::*;
+    import subscriber_pkg::*;
 	class my_env extends uvm_env;
 
 		my_agent agnt;

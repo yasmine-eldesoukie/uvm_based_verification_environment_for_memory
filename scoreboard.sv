@@ -1,5 +1,9 @@
 package scoreboard_pkg;
-	class my_scoreboard extends uvm_scoreboard #(my_seq_item);
+    `include "uvm_macros.svh"
+    import uvm_pkg::*;
+
+    import seq_item_pkg::*;
+	class my_scoreboard extends uvm_scoreboard;
 
 		my_seq_item seq_item;
 		
