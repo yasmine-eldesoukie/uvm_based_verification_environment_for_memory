@@ -35,5 +35,11 @@ package test_pkg;
             $display("test build phase");
         endfunction
 
+        function void connect_phase(uvm_phase phase);
+            super.connect_phase(phase);
+
+            $display("test connect phase");
+        endfunction
+
     endclass
 endpackage

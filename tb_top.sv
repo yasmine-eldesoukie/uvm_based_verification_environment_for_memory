@@ -21,7 +21,7 @@ module tb_top();
 
     initial begin
         clk=1'b0;
-        //always #5 clk=~clk;
+        forever #5 clk=~clk;
     end
 
     initial begin

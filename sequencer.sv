@@ -22,5 +22,11 @@ package sequencer_pkg;
             $display("sequencer build phase");
         endfunction
 
+        function void connect_phase(uvm_phase phase);
+            super.connect_phase(phase);
+
+            $display("sequencer connect phase");
+        endfunction
+
     endclass
 endpackage

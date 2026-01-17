@@ -2,6 +2,7 @@ package agent_pkg;
     `include "uvm_macros.svh"
     import uvm_pkg::*;
 
+    import seq_item_pkg::*;
     import driver_pkg::*;
     import monitor_pkg::*;
     import sequencer_pkg::*;
@@ -12,6 +13,8 @@ package agent_pkg;
         my_sequencer seqr;
 
         virtual intf agent_vif; 
+
+        uvm_analysis_port #(my_seq_item) agnt_ap;
 
         /* step 1: registeration in the factory */
         `uvm_component_utils(my_agent);
@@ -34,8 +37,25 @@ package agent_pkg;
             uvm_config_db #(virtual intf)::set(this,"driv", "my_vif", agent_vif);
             uvm_config_db #(virtual intf)::set(this,"mon", "my_vif", agent_vif);
 
+            //-------------- port --------------//
+            agnt_ap= new("agnt_ap", this);
+
             $display("agent build phase");
         endfunction
+
+        function void connect_phase(uvm_phase phase);
+            super.connect_phase(phase);
+            mon.mon_ap.connect(agnt_ap);
+            driv.seq_item_port.connect(seqr.seq_item_export);
+
+            $display("agent connect phase");
+        endfunction
+
+        task run_phase(uvm_phase phase);
+            super.run_phase(phase);
+
+            $display("agent run phase");
+        endtask
 
     endclass
 endpackage

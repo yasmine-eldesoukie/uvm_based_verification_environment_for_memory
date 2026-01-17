@@ -36,5 +36,19 @@ package env_pkg;
             $display("env build phase");
         endfunction
 
+        function void connect_phase(uvm_phase phase);
+            super.connect_phase(phase);
+            agnt.agnt_ap.connect(sub.analysis_export);
+            agnt.agnt_ap.connect(scr.scr_ax);
+
+            $display("env connect phase");
+        endfunction
+
+        task run_phase(uvm_phase phase);
+            super.run_phase(phase);
+
+            $display("env run phase");
+        endtask
+
     endclass
 endpackage

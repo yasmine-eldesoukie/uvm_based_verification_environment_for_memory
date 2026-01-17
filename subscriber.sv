@@ -22,6 +22,12 @@ package subscriber_pkg;
             $display("subscriber build phase");
         endfunction
 
+        function void connect_phase(uvm_phase phase);
+            super.connect_phase(phase);
+
+            $display("subscriber connect phase");
+        endfunction
+
         //write function is defined as "pure virtual" so it has to be implemented
 		virtual function void write(T t);
 

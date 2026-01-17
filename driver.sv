@@ -27,6 +27,24 @@ package driver_pkg;
                 `uvm_info("my_driver", "Failed to get vif in driver", UVM_LOW); 
             $display("driver build phase");
         endfunction
+
+        function void connect_phase(uvm_phase phase);
+            super.connect_phase(phase);
+
+            $display("driver connect phase");
+        endfunction
+
+        task run_phase(uvm_phase phase);
+            super.run_phase(phase);
+
+            forever begin
+                seq_item_port.get_next_item(seq_item);
+                
+                seq_item_port.item_done(); 
+            end
+
+            $display("driver run phase");
+        endtask
         
     endclass
 endpackage
