@@ -41,5 +41,15 @@ package test_pkg;
             $display("test connect phase");
         endfunction
 
+        task run_phase(uvm_phase phase);
+            super.run_phase(phase);
+
+            phase.raise_objection(this);
+            seq.start(env.agnt.seqr);
+            phase.drop_objection(this);
+
+            $display("test run phase");
+        endtask
+
     endclass
 endpackage

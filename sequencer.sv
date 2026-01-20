@@ -28,5 +28,11 @@ package sequencer_pkg;
             $display("sequencer connect phase");
         endfunction
 
+        task run_phase(uvm_phase phase);
+            super.run_phase(phase);
+
+            $display("sequencer run phase");
+        endtask
+
     endclass
 endpackage
