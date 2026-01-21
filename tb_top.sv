@@ -1,6 +1,7 @@
+`include "interface.sv" //interface file must be included outside the module to be global and visible to all the other files
 module tb_top();
-    `include "interface.sv"
     `include "uvm_macros.svh"
+
     import uvm_pkg::*;
 
     import test_pkg::*;
