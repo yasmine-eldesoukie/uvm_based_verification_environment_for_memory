@@ -4,6 +4,18 @@ package seq_item_pkg;
 
     class my_seq_item extends uvm_sequence_item;
 
+    	logic rst;
+        rand logic re;
+        rand logic en;
+        randc logic [3:0] addr;
+        rand logic [31:0] data_in;
+
+        //constraints
+        constraint c_data_in {data_in dist{'hffffffff:= 10, 'h0:=10, ['h1:'hfffffffe]:/80};}
+
+        logic [31:0] data_out;
+        logic valid_out;
+        
     	/* step 1: registeration in the factory */
         `uvm_object_utils(my_seq_item);
 
