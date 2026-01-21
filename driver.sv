@@ -3,6 +3,7 @@ package driver_pkg;
     import uvm_pkg::*;
 
     import seq_item_pkg::*;
+    `define driv_if driv_vif.driv_cb 
 	class my_driver extends uvm_driver #(my_seq_item);
 
 		my_seq_item seq_item;
@@ -39,7 +40,13 @@ package driver_pkg;
 
             forever begin
                 seq_item_port.get_next_item(seq_item);
-                
+                @(`driv_if)
+                `driv_if.rst    <= seq_item.rst;
+                `driv_if.re     <= seq_item.re;
+                `driv_if.en     <= seq_item.en;
+                `driv_if.addr   <= seq_item.addr;
+                `driv_if.data_in<= seq_item.data_in;
+                //#1
                 seq_item_port.item_done(); 
             end
 

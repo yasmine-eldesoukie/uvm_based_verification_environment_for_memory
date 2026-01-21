@@ -3,6 +3,7 @@ package monitor_pkg;
     import uvm_pkg::*;
 
     import seq_item_pkg::*;
+    `define mon_if mon_vif.mon_cb
 	class my_monitor extends uvm_monitor;
 
 		my_seq_item seq_item;
@@ -42,9 +43,23 @@ package monitor_pkg;
 
         task run_phase(uvm_phase phase);
             super.run_phase(phase);
-            mon_ap.write(seq_item);
+            $display("monitor run phase");
 
-            $display("monitor connect phase");
+            forever begin
+                //$display("monitor in loop");
+                //repeat (1) @(posedge mon_vif.clk); 
+                //$display("monitor saw clk");
+                @(`mon_if);
+                seq_item.rst= `mon_if.rst;
+                seq_item.en= `mon_if.en;
+                seq_item.re= `mon_if.re;
+                seq_item.addr= `mon_if.addr;
+                seq_item.data_in= `mon_if.data_in;
+                seq_item.data_out= `mon_if.data_out;
+                seq_item.valid_out= `mon_if.valid_out;
+
+                mon_ap.write(seq_item);
+            end
         endtask
     endclass
 endpackage

@@ -21,7 +21,7 @@ package sequence_pkg;
         	reset_pkt=my_seq_item::type_id::create("reset_pkt");
         	
         	start_item(reset_pkt);
-	        	reset_pkt.rst= 1'b1;
+	        	reset_pkt.rst= 1'b0;
 	        	reset_pkt.en= 1'b0;
 	        	reset_pkt.re= 1'b0;
 	        	reset_pkt.data_in= 'b0;
