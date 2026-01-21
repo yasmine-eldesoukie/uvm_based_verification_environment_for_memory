@@ -44,6 +44,9 @@ package test_pkg;
         task run_phase(uvm_phase phase);
             super.run_phase(phase);
 
+            //this line is to set a time so that the test doesn't end before the last packet is proccessed
+            phase.get_objection().set_drain_time(this, 50ns);
+
             phase.raise_objection(this);
             seq.start(env.agnt.seqr);
             phase.drop_objection(this);
