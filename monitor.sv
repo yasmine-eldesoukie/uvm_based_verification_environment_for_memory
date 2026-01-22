@@ -46,9 +46,6 @@ package monitor_pkg;
             $display("monitor run phase");
 
             forever begin
-                //$display("monitor in loop");
-                //repeat (1) @(posedge mon_vif.clk); 
-                //$display("monitor saw clk");
                 @(`mon_if);
                 seq_item.rst= `mon_if.rst;
                 seq_item.en= `mon_if.en;
