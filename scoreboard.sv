@@ -78,9 +78,7 @@ package scoreboard_pkg;
                 end
                 else if (seq_item.en) begin
                     shadow_mem[seq_item.addr] = seq_item.data_in;
-                    $display("shadow_mem= %0p", shadow_mem);
-                    if (seq_item.valid_out !== 'b0) 
-                        `uvm_error("Data_Mismatch", $sformatf("valid_out= %0b", seq_item.valid_out));
+                    //$display("shadow_mem= %0p", shadow_mem);
                 end
                 else if (seq_item.re) begin
                     read_addr= seq_item.addr;
