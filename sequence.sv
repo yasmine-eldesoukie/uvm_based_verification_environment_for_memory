@@ -5,8 +5,10 @@ package sequence_pkg;
 	import seq_item_pkg::*;
 	class my_sequence extends uvm_sequence #(my_seq_item); //uvm_sequence is parameterized with the seq_item class it operates on
 		
-		my_seq_item reset_pkt, write_pkt, read_pkt;
+		my_seq_item reset_pkt, write_pkt, read_pkt, rand_pkt;
 		randc logic [3:0] local_addr; //will be used inside loops to cyclic-randomize the address , because a new packet with each iteration contradicts "randc" in seq_item 
+
+		logic [3:0] addr_arr [4]= {15, 0, 0, 15}; //for the directed test below
 
 		/* step 1: registeration in the factory */
         `uvm_object_utils(my_sequence);
@@ -31,7 +33,7 @@ package sequence_pkg;
 
             //------------- Write -------------//
         	
-        	repeat (16) begin
+        	repeat (100) begin
         		write_pkt=my_seq_item::type_id::create("write_pkt");
 	        	start_item(write_pkt);
 	        		//this randomizes rand variables in the my_seq_item class
@@ -49,7 +51,7 @@ package sequence_pkg;
 
             //------------- Read -------------//
   
-        	repeat (16) begin
+        	repeat (100) begin
         		read_pkt=my_seq_item::type_id::create("read_pkt");
 	        	start_item(read_pkt);
 	        		if ( !read_pkt.randomize() ) 
@@ -62,6 +64,33 @@ package sequence_pkg;
 		        	read_pkt.addr= local_addr;
 	        	finish_item(read_pkt);
             end
+
+            //------------- Random -------------//
+
+            repeat (150) begin
+        		rand_pkt=my_seq_item::type_id::create("rand_pkt");
+	        	start_item(rand_pkt);
+	        		if ( !rand_pkt.randomize() ) 
+		        		`uvm_fatal("RAND_FAILED", "rand_pkt randomization failed" );
+		        	if ( !this.randomize() ) 
+		        		`uvm_fatal("RAND_FAILED", "local_addr randomization failed" );
+		        	rand_pkt.rst= 1'b1;
+		        	rand_pkt.addr= local_addr;
+	        	finish_item(rand_pkt);
+            end
+
+            //------------- Directed -------------//
+
+            for (int i=0; i<4; i++) begin
+            	rand_pkt=my_seq_item::type_id::create("rand_pkt");
+		    	start_item(rand_pkt);
+		    		if ( !rand_pkt.randomize() ) 
+		        		`uvm_fatal("RAND_FAILED", "rand_pkt randomization failed" );
+		        	rand_pkt.rst= 1'b1;
+		        	rand_pkt.addr= addr_arr[i];
+		    	finish_item(rand_pkt);
+            end
+
         endtask
 
     endclass

@@ -11,7 +11,7 @@ package seq_item_pkg;
         rand logic [31:0] data_in;
 
         //constraints
-        constraint c_data_in {data_in dist{'hffffffff:= 10, 'h0:=10, ['h1:'hfffffffe]:/80};}
+        constraint c_data_in {data_in dist{'hffffffff:= 10, 'h0:=10, 'h55555555:=10, 'haaaaaaaa:=10, ['h1:'hfffffffe]:/80};}
 
         logic [31:0] data_out;
         logic valid_out;
