@@ -38,7 +38,7 @@ package driver_pkg;
         task run_phase(uvm_phase phase);
             super.run_phase(phase);
             $display("driver run phase");
-            
+
             forever begin
                 seq_item_port.get_next_item(seq_item);
                 @(`driv_if)
@@ -51,6 +51,11 @@ package driver_pkg;
                 seq_item_port.item_done(); 
             end
         endtask
+
+        function void extract_phase (uvm_phase phase);
+            super.extract_phase(phase);
+            $display("driver extract phase");
+        endfunction
         
     endclass
 endpackage

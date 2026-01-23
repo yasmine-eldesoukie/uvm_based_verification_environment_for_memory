@@ -57,5 +57,10 @@ package agent_pkg;
             $display("agent run phase");
         endtask
 
+        function void extract_phase (uvm_phase phase);
+            super.extract_phase(phase);
+            $display("agent extract phase");
+        endfunction
+
     endclass
 endpackage

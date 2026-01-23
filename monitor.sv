@@ -58,5 +58,10 @@ package monitor_pkg;
                 mon_ap.write(seq_item);
             end
         endtask
+
+        function void extract_phase (uvm_phase phase);
+            super.extract_phase(phase);
+            $display("monitor extract phase");
+        endfunction
     endclass
 endpackage

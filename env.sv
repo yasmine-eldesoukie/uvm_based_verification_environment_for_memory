@@ -50,5 +50,10 @@ package env_pkg;
             $display("env run phase");
         endtask
 
+        function void extract_phase (uvm_phase phase);
+            super.extract_phase(phase);
+            $display("env extract phase");
+        endfunction
+
     endclass
 endpackage

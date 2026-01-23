@@ -52,5 +52,10 @@ package test_pkg;
             phase.drop_objection(this);
         endtask
 
+        function void extract_phase (uvm_phase phase);
+            super.extract_phase(phase);
+            $display("test extract phase");
+        endfunction
+
     endclass
 endpackage

@@ -76,5 +76,10 @@ package subscriber_pkg;
             end
         endfunction
 
+        function void extract_phase (uvm_phase phase);
+            super.extract_phase(phase);
+            $display("subscriber extract phase");
+        endfunction
+
     endclass
 endpackage

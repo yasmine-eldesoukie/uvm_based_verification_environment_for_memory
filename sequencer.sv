@@ -34,5 +34,10 @@ package sequencer_pkg;
             $display("sequencer run phase");
         endtask
 
+        function void extract_phase (uvm_phase phase);
+            super.extract_phase(phase);
+            $display("sequencer extract phase");
+        endfunction
+
     endclass
 endpackage
