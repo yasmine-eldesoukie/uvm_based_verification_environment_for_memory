@@ -1,0 +1,328 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /subscriber_pkg
+=== Design Unit: work.subscriber_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      1        na        na   100.00%
+        Coverpoints/Crosses          6        na        na        na
+            Covergroup Bins         87        87         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /subscriber_pkg/my_subscriber/cg                100.00%        100          -    Covered              
+    covered/total bins:                                    87         87          -                      
+    missing/total bins:                                     0         87          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_data_in                             100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_op                                  100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_curr_addr                           100.00%        100          -    Covered              
+        covered/total bins:                                17         17          -                      
+        missing/total bins:                                 0         17          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_prev_addr                           100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cross_walk                                    0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          0          -                      
+        missing/total bins:                                 0          0          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cross_addr_op                               100.00%        100          -    Covered              
+        covered/total bins:                                48         48          -                      
+        missing/total bins:                                 0         48          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/subscriber_pkg::my_subscriber::cg  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    87         87          -                      
+    missing/total bins:                                     0         87          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_data_in                             100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                      32          1          -    Covered              
+        bin all_ones                                       28          1          -    Covered              
+        bin toggle                                         62          1          -    Covered              
+    Coverpoint cp_op                                  100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        ignore_bin idle                                    34                     -    Occurred             
+        bin write                                         138          1          -    Covered              
+        bin read                                          145          1          -    Covered              
+        bin wr_rd                                          40          1          -    Covered              
+    Coverpoint cp_curr_addr                           100.00%        100          -    Covered              
+        covered/total bins:                                17         17          -                      
+        missing/total bins:                                 0         17          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin range[0]                                       24          1          -    Covered              
+        bin range[1]                                       22          1          -    Covered              
+        bin range[2]                                       22          1          -    Covered              
+        bin range[3]                                       22          1          -    Covered              
+        bin range[4]                                       22          1          -    Covered              
+        bin range[5]                                       22          1          -    Covered              
+        bin range[6]                                       22          1          -    Covered              
+        bin range[7]                                       22          1          -    Covered              
+        bin range[8]                                       22          1          -    Covered              
+        bin range[9]                                       22          1          -    Covered              
+        bin range[10]                                      21          1          -    Covered              
+        bin range[11]                                      21          1          -    Covered              
+        bin range[12]                                      22          1          -    Covered              
+        bin range[13]                                      22          1          -    Covered              
+        bin range[14]                                      22          1          -    Covered              
+        bin range[15]                                      27          1          -    Covered              
+        bin toggle                                         10          1          -    Covered              
+    Coverpoint cp_prev_addr                           100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        24          1          -    Covered              
+        bin auto[1]                                        22          1          -    Covered              
+        bin auto[2]                                        22          1          -    Covered              
+        bin auto[3]                                        22          1          -    Covered              
+        bin auto[4]                                        22          1          -    Covered              
+        bin auto[5]                                        22          1          -    Covered              
+        bin auto[6]                                        22          1          -    Covered              
+        bin auto[7]                                        22          1          -    Covered              
+        bin auto[8]                                        22          1          -    Covered              
+        bin auto[9]                                        22          1          -    Covered              
+        bin auto[10]                                       21          1          -    Covered              
+        bin auto[11]                                       21          1          -    Covered              
+        bin auto[12]                                       22          1          -    Covered              
+        bin auto[13]                                       22          1          -    Covered              
+        bin auto[14]                                       22          1          -    Covered              
+        bin auto[15]                                       26          1          -    Covered              
+    Cross cross_walk [2]                                0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          0          -                      
+        missing/total bins:                                 0          0          -                      
+        % Hit:                                        100.00%        100          -                      
+        Illegal and Ignore Bins:
+            ignore_bin others                             356                     -    Occurred             
+    Cross cross_addr_op                               100.00%        100          -    Covered              
+        covered/total bins:                                48         48          -                      
+        missing/total bins:                                 0         48          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <range[15],wr_rd>                           3          1          -    Covered              
+            bin <range[7],wr_rd>                            3          1          -    Covered              
+            bin <range[11],wr_rd>                           1          1          -    Covered              
+            bin <range[3],wr_rd>                            2          1          -    Covered              
+            bin <range[13],wr_rd>                           2          1          -    Covered              
+            bin <range[5],wr_rd>                            3          1          -    Covered              
+            bin <range[9],wr_rd>                            1          1          -    Covered              
+            bin <range[1],wr_rd>                            5          1          -    Covered              
+            bin <range[14],wr_rd>                           4          1          -    Covered              
+            bin <range[6],wr_rd>                            3          1          -    Covered              
+            bin <range[10],wr_rd>                           3          1          -    Covered              
+            bin <range[2],wr_rd>                            1          1          -    Covered              
+            bin <range[12],wr_rd>                           2          1          -    Covered              
+            bin <range[4],wr_rd>                            2          1          -    Covered              
+            bin <range[8],wr_rd>                            1          1          -    Covered              
+            bin <range[0],wr_rd>                            4          1          -    Covered              
+            bin <range[15],read>                           14          1          -    Covered              
+            bin <range[7],read>                             7          1          -    Covered              
+            bin <range[11],read>                           10          1          -    Covered              
+            bin <range[3],read>                             8          1          -    Covered              
+            bin <range[13],read>                           11          1          -    Covered              
+            bin <range[5],read>                            10          1          -    Covered              
+            bin <range[9],read>                             9          1          -    Covered              
+            bin <range[1],read>                             6          1          -    Covered              
+            bin <range[14],read>                           10          1          -    Covered              
+            bin <range[6],read>                             9          1          -    Covered              
+            bin <range[10],read>                            8          1          -    Covered              
+            bin <range[2],read>                             9          1          -    Covered              
+            bin <range[12],read>                            8          1          -    Covered              
+            bin <range[4],read>                             9          1          -    Covered              
+            bin <range[8],read>                             8          1          -    Covered              
+            bin <range[0],read>                             9          1          -    Covered              
+            bin <range[15],write>                           7          1          -    Covered              
+            bin <range[7],write>                            9          1          -    Covered              
+            bin <range[11],write>                           9          1          -    Covered              
+            bin <range[3],write>                           10          1          -    Covered              
+            bin <range[13],write>                           8          1          -    Covered              
+            bin <range[5],write>                            8          1          -    Covered              
+            bin <range[9],write>                            9          1          -    Covered              
+            bin <range[1],write>                            7          1          -    Covered              
+            bin <range[14],write>                           8          1          -    Covered              
+            bin <range[6],write>                            9          1          -    Covered              
+            bin <range[10],write>                           6          1          -    Covered              
+            bin <range[2],write>                           11          1          -    Covered              
+            bin <range[12],write>                           9          1          -    Covered              
+            bin <range[4],write>                            8          1          -    Covered              
+            bin <range[8],write>                           11          1          -    Covered              
+            bin <range[0],write>                            9          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin ignore_toggle                       10                     -    Occurred             
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /subscriber_pkg/my_subscriber/cg                100.00%        100          -    Covered              
+    covered/total bins:                                    87         87          -                      
+    missing/total bins:                                     0         87          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_data_in                             100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_op                                  100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_curr_addr                           100.00%        100          -    Covered              
+        covered/total bins:                                17         17          -                      
+        missing/total bins:                                 0         17          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cp_prev_addr                           100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cross_walk                                    0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          0          -                      
+        missing/total bins:                                 0          0          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cross_addr_op                               100.00%        100          -    Covered              
+        covered/total bins:                                48         48          -                      
+        missing/total bins:                                 0         48          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/subscriber_pkg::my_subscriber::cg  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    87         87          -                      
+    missing/total bins:                                     0         87          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_data_in                             100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin all_zeros                                      32          1          -    Covered              
+        bin all_ones                                       28          1          -    Covered              
+        bin toggle                                         62          1          -    Covered              
+    Coverpoint cp_op                                  100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        ignore_bin idle                                    34                     -    Occurred             
+        bin write                                         138          1          -    Covered              
+        bin read                                          145          1          -    Covered              
+        bin wr_rd                                          40          1          -    Covered              
+    Coverpoint cp_curr_addr                           100.00%        100          -    Covered              
+        covered/total bins:                                17         17          -                      
+        missing/total bins:                                 0         17          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin range[0]                                       24          1          -    Covered              
+        bin range[1]                                       22          1          -    Covered              
+        bin range[2]                                       22          1          -    Covered              
+        bin range[3]                                       22          1          -    Covered              
+        bin range[4]                                       22          1          -    Covered              
+        bin range[5]                                       22          1          -    Covered              
+        bin range[6]                                       22          1          -    Covered              
+        bin range[7]                                       22          1          -    Covered              
+        bin range[8]                                       22          1          -    Covered              
+        bin range[9]                                       22          1          -    Covered              
+        bin range[10]                                      21          1          -    Covered              
+        bin range[11]                                      21          1          -    Covered              
+        bin range[12]                                      22          1          -    Covered              
+        bin range[13]                                      22          1          -    Covered              
+        bin range[14]                                      22          1          -    Covered              
+        bin range[15]                                      27          1          -    Covered              
+        bin toggle                                         10          1          -    Covered              
+    Coverpoint cp_prev_addr                           100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        24          1          -    Covered              
+        bin auto[1]                                        22          1          -    Covered              
+        bin auto[2]                                        22          1          -    Covered              
+        bin auto[3]                                        22          1          -    Covered              
+        bin auto[4]                                        22          1          -    Covered              
+        bin auto[5]                                        22          1          -    Covered              
+        bin auto[6]                                        22          1          -    Covered              
+        bin auto[7]                                        22          1          -    Covered              
+        bin auto[8]                                        22          1          -    Covered              
+        bin auto[9]                                        22          1          -    Covered              
+        bin auto[10]                                       21          1          -    Covered              
+        bin auto[11]                                       21          1          -    Covered              
+        bin auto[12]                                       22          1          -    Covered              
+        bin auto[13]                                       22          1          -    Covered              
+        bin auto[14]                                       22          1          -    Covered              
+        bin auto[15]                                       26          1          -    Covered              
+    Cross cross_walk [2]                                0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          0          -                      
+        missing/total bins:                                 0          0          -                      
+        % Hit:                                        100.00%        100          -                      
+        Illegal and Ignore Bins:
+            ignore_bin others                             356                     -    Occurred             
+    Cross cross_addr_op                               100.00%        100          -    Covered              
+        covered/total bins:                                48         48          -                      
+        missing/total bins:                                 0         48          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <range[15],wr_rd>                           3          1          -    Covered              
+            bin <range[7],wr_rd>                            3          1          -    Covered              
+            bin <range[11],wr_rd>                           1          1          -    Covered              
+            bin <range[3],wr_rd>                            2          1          -    Covered              
+            bin <range[13],wr_rd>                           2          1          -    Covered              
+            bin <range[5],wr_rd>                            3          1          -    Covered              
+            bin <range[9],wr_rd>                            1          1          -    Covered              
+            bin <range[1],wr_rd>                            5          1          -    Covered              
+            bin <range[14],wr_rd>                           4          1          -    Covered              
+            bin <range[6],wr_rd>                            3          1          -    Covered              
+            bin <range[10],wr_rd>                           3          1          -    Covered              
+            bin <range[2],wr_rd>                            1          1          -    Covered              
+            bin <range[12],wr_rd>                           2          1          -    Covered              
+            bin <range[4],wr_rd>                            2          1          -    Covered              
+            bin <range[8],wr_rd>                            1          1          -    Covered              
+            bin <range[0],wr_rd>                            4          1          -    Covered              
+            bin <range[15],read>                           14          1          -    Covered              
+            bin <range[7],read>                             7          1          -    Covered              
+            bin <range[11],read>                           10          1          -    Covered              
+            bin <range[3],read>                             8          1          -    Covered              
+            bin <range[13],read>                           11          1          -    Covered              
+            bin <range[5],read>                            10          1          -    Covered              
+            bin <range[9],read>                             9          1          -    Covered              
+            bin <range[1],read>                             6          1          -    Covered              
+            bin <range[14],read>                           10          1          -    Covered              
+            bin <range[6],read>                             9          1          -    Covered              
+            bin <range[10],read>                            8          1          -    Covered              
+            bin <range[2],read>                             9          1          -    Covered              
+            bin <range[12],read>                            8          1          -    Covered              
+            bin <range[4],read>                             9          1          -    Covered              
+            bin <range[8],read>                             8          1          -    Covered              
+            bin <range[0],read>                             9          1          -    Covered              
+            bin <range[15],write>                           7          1          -    Covered              
+            bin <range[7],write>                            9          1          -    Covered              
+            bin <range[11],write>                           9          1          -    Covered              
+            bin <range[3],write>                           10          1          -    Covered              
+            bin <range[13],write>                           8          1          -    Covered              
+            bin <range[5],write>                            8          1          -    Covered              
+            bin <range[9],write>                            9          1          -    Covered              
+            bin <range[1],write>                            7          1          -    Covered              
+            bin <range[14],write>                           8          1          -    Covered              
+            bin <range[6],write>                            9          1          -    Covered              
+            bin <range[10],write>                           6          1          -    Covered              
+            bin <range[2],write>                           11          1          -    Covered              
+            bin <range[12],write>                           9          1          -    Covered              
+            bin <range[4],write>                            8          1          -    Covered              
+            bin <range[8],write>                           11          1          -    Covered              
+            bin <range[0],write>                            9          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin ignore_toggle                       10                     -    Occurred             
+
+ [2] - Does not contribute coverage as the item is empty
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+Total Coverage By Instance (filtered view): 100.00%
+
